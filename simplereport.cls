@@ -2,28 +2,26 @@
 \ProvidesClass{simplereport}[2019/11/07 LaTeX class for simple reports]
 
 \LoadClass[a4paper]{article}
-\def\course{Define the course!}
-\def\courseCode{Define the courseCode!}
+\def\@course{}
+\def\@courseCode{}
+
+\newcommand{\course}[2]{\def\@course{#2}\def\@courseCode{#1}}
 
 \newif\if@defaultpackages\@defaultpackagesfalse
 \DeclareOption{defaultpackages}{\@defaultpackagestrue}
 \newif\if@defaultbibliography\@defaultbibliographyfalse
 \DeclareOption{bib}{\@defaultbibliographytrue}
 \DeclareOption{inf2200}{%
-	\def\courseCode{INF-2200}
-	\def\course{Computer Architecture and Organization}
+	\course{INF-2200}{Computer Architecture and Organization}
 }
 \DeclareOption{inf1101}{%
-	\def\courseCode{INF-1101}
-	\def\course{Datastrukturer og Algoritmer}
+	\course{INF-1101}{Datastrukturer og Algoritmer}
 }
 \DeclareOption{inf1400}{%
-	\def\courseCode{INF-1400}
-	\def\course{Object Oriented Programming}
+	\course{INF-1400}{Object Oriented Programming}
 }
 \DeclareOption{inf1100}{%
-	\def\courseCode{INF-1100}
-	\def\course{Introduction to Programming and Computer Behavior}
+	\course{INF-1100}{Introduction to Programming and Computer Behavior}
 }
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -68,12 +66,12 @@
 
 \renewcommand{\headrulewidth}{1pt} % customise the layout...
 \renewcommand{\footrulewidth}{0pt}
-\lhead{\fancyplain{}{\courseCode: \@title}}\chead{}\rhead{\fancyplain{}{\@author{}}}
+\lhead{\fancyplain{}{\@courseCode: \@title}}\chead{}\rhead{\fancyplain{}{\@author{}}}
 \lfoot{}\cfoot{Page {\thepage} of~\pageref{LastPage}}\rfoot{}
 
 \renewcommand{\maketitle}{%
 	\begin{center}
-	\textsc{\Large \courseCode: \course}\\[0.5cm]
+	\textsc{\Large \@courseCode: \@course}\\[0.5cm]
 
 	\textsc{\LARGE \@title}\\[1.0cm]
 
@@ -81,6 +79,15 @@
 
 	{\large \today}
 \end{center}
+}
+
+\AtBeginDocument{%
+	\ifx\@course\@empty
+	\ClassError{simplereport}{course not defined}{You need to define the course}
+	\fi
+	\ifx\@courseCode\@empty
+	\ClassError{simplereport}{courseCode not defined}{This is not supposed to happen}
+	\fi
 }
 
 \if@defaultbibliography
