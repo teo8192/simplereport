@@ -83,10 +83,10 @@
 
 \AtBeginDocument{%
 	\ifx\@course\@empty
-	\ClassError{simplereport}{course not defined}{You need to define the course}
+	\ClassError{simplereport}{course not defined}{You need to define the course and coursecode}
 	\fi
 	\ifx\@courseCode\@empty
-	\ClassError{simplereport}{courseCode not defined}{This is not supposed to happen}
+	\ClassError{simplereport}{courseCode not defined}{This is not supposed to happen, you must have left the coursecode blank.}
 	\fi
 }
 
