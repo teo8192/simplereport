@@ -1,15 +1,19 @@
 # simplereport
 
 This is a LaTeX class for a simple report.
+The class name is `simplereport`.
 
-Clone this repo, and call the command
+## Installation
+
+Run the following commands:
 
 ```bash
+git clone https://github.com/teo8192/simplereport.git
+cd simplereport
 texhash
 ```
 
 Then you can use the class from wherever.
-The class name is `simplereport`, and it have some options.
 
 ## Class Options
 
