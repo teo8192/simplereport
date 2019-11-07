@@ -2,6 +2,8 @@
 \ProvidesClass{simplereport}[2019/11/07 LaTeX class for simple reports]
 
 \LoadClass[a4paper]{article}
+\def\course{Define the course!}
+\def\courseCode{Define the courseCode!}
 
 \newif\if@defaultpackages\@defaultpackagesfalse
 \DeclareOption{defaultpackages}{\@defaultpackagestrue}
@@ -28,9 +30,9 @@
 
 \RequirePackage{etoolbox}
 
-\ifdef{\course}{}{\ClassError{simplereport}{Course not added}{You need to add a course.
-		This is a class option, add square bracets after documentclass, 
-		and choose between inf1100, inf1101, inf1400 and inf2200}}
+%\ifdef{\course}{}{\ClassError{simplereport}{Course not added}{You need to add a course.
+		%This is a class option, add square bracets after documentclass, 
+		%and choose between inf1100, inf1101, inf1400 and inf2200}}
 
 \pagenumbering{arabic}
 
