@@ -5,23 +5,28 @@
 \def\@course{}
 \def\@courseCode{}
 
-\newcommand{\course}[2]{\def\@course{#2}\def\@courseCode{#1}}
+\newcommand{\course}[2][]{\def\@course{#2}
+	\ifx#1\@empty
+	\relax
+	\else
+	\def\@courseCode{#1}
+	\fi}
 
 \newif\if@defaultpackages\@defaultpackagesfalse
 \DeclareOption{defaultpackages}{\@defaultpackagestrue}
 \newif\if@defaultbibliography\@defaultbibliographyfalse
 \DeclareOption{bib}{\@defaultbibliographytrue}
 \DeclareOption{inf2200}{%
-	\course{INF-2200}{Computer Architecture and Organization}
+	\course[INF-2200]{Computer Architecture and Organization}
 }
 \DeclareOption{inf1101}{%
-	\course{INF-1101}{Datastrukturer og Algoritmer}
+	\course[INF-1101]{Datastrukturer og Algoritmer}
 }
 \DeclareOption{inf1400}{%
-	\course{INF-1400}{Object Oriented Programming}
+	\course[INF-1400]{Object Oriented Programming}
 }
 \DeclareOption{inf1100}{%
-	\course{INF-1100}{Introduction to Programming and Computer Behavior}
+	\course[INF-1100]{Introduction to Programming and Computer Behavior}
 }
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -66,28 +71,43 @@
 
 \renewcommand{\headrulewidth}{1pt} % customise the layout...
 \renewcommand{\footrulewidth}{0pt}
-\lhead{\fancyplain{}{\@courseCode: \@title}}\chead{}\rhead{\fancyplain{}{\@author{}}}
+\lhead{\fancyplain{}{
+\ifx\@courseCode\@empty
+\relax
+\else
+\@courseCode:
+\fi
+\@title}}\chead{}\rhead{\fancyplain{}{\@author{}}}
 \lfoot{}\cfoot{Page {\thepage} of~\pageref{LastPage}}\rfoot{}
 
 \renewcommand{\maketitle}{%
 	\begin{center}
-	\textsc{\Large \@courseCode: \@course}\\[0.5cm]
+		\ifx\@course\@empty
+		\relax
+		\else
+	\textsc{
+		\ifx\@courseCode\@empty
+		\relax
+		\else
+		\Large \@courseCode:
+		\fi
+		\@course}\\[0.5cm]
+	\fi
 
+	\ifx\@title\@empty
+	\ClassError{simplereport}{Trying to maketitle without title}{What is wrong with you?}
+	\else
 	\textsc{\LARGE \@title}\\[1.0cm]
+	\fi
 
+	\ifx\@author\@empty
+	\relax
+	\else
 	\LARGE{\@author} \\[0.5cm]
+	\fi
 
 	{\large \today}
 \end{center}
-}
-
-\AtBeginDocument{%
-	\ifx\@course\@empty
-	\ClassError{simplereport}{course not defined}{You need to define the course and coursecode}
-	\fi
-	\ifx\@courseCode\@empty
-	\ClassError{simplereport}{courseCode not defined}{This is not supposed to happen, you must have left the coursecode blank.}
-	\fi
 }
 
 \if@defaultbibliography
