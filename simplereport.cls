@@ -88,11 +88,11 @@
 		\ifx\@course\@empty
 		\relax
 		\else
-	\textsc{
+	\textsc{\Large
 		\ifx\@courseCode\@empty
 		\relax
 		\else
-		\Large \@courseCode:
+		\@courseCode:
 		\fi
 		\@course}\\[0.5cm]
 	\fi
