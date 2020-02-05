@@ -28,6 +28,9 @@
 \DeclareOption{inf1100}{%
 	\course[INF-1100]{Introduction to Programming and Computer Behavior}
 }
+\DeclareOption{inf2201}{%
+	\course[INF-2201]{Operating System Fundamentals}
+}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
