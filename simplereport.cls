@@ -4,6 +4,7 @@
 \LoadClass[a4paper]{article}
 \def\@course{}
 \def\@courseCode{}
+\def\@candidate{}
 
 \newcommand{\course}[2][]{\def\@course{#2}
 	\ifx#1\@empty
@@ -11,6 +12,8 @@
 	\else
 	\def\@courseCode{#1}
 	\fi}
+
+\newcommand{\candidate}[1]{\def\@candidate{#1}}
 
 \newif\if@defaultpackages\@defaultpackagesfalse
 \DeclareOption{defaultpackages}{\@defaultpackagestrue}
@@ -57,6 +60,8 @@
 \RequirePackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
 \RequirePackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 \RequirePackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+
+\newcommand\defeq{\stackrel{\mathclap{\normalfont\tiny\mbox{def}}}{=}}
 \fi
 
 \allsectionsfont{\sffamily\mdseries\upshape}
@@ -80,7 +85,17 @@
 \else
 \@courseCode:
 \fi
-\@title}}\chead{}\rhead{\fancyplain{}{\@author{}}}
+\@title}}\chead{}\rhead{\fancyplain{}{
+\ifx\@candidate\@empty
+\ifx\@author\@empty
+\relax
+\else
+\@author{}
+\fi
+\else
+Candidate No. \@candidate
+\fi
+}}
 \lfoot{}\cfoot{Page {\thepage} of~\pageref{LastPage}}\rfoot{}
 
 \renewcommand{\maketitle}{%
@@ -103,10 +118,12 @@
 	\textsc{\LARGE \@title}\\[1.0cm]
 	\fi
 
+	\ifx\@candidate\@empty
 	\ifx\@author\@empty
 	\relax
 	\else
 	\LARGE{\@author} \\[0.5cm]
+	\fi
 	\fi
 
 	{\large \today}
