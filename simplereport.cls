@@ -19,6 +19,8 @@
 \DeclareOption{defaultpackages}{\@defaultpackagestrue}
 \newif\if@defaultbibliography\@defaultbibliographyfalse
 \DeclareOption{bib}{\@defaultbibliographytrue}
+\newif\if@noprintbib\@noprintbibtrue
+\DeclareOption{noprintbib}{\@noprintbibfalse}
 \DeclareOption{inf2200}{%
 	\course[INF-2200]{Computer Architecture and Organization}
 }
@@ -132,11 +134,13 @@ Candidate No. \@candidate
 
 \if@defaultbibliography
 \RequirePackage[backend=biber]{biblatex}
+\if@noprintbib
 \AtEndDocument{%
 	\lfoot{}\cfoot{}\rfoot{}
 	\printbibliography{}
 	\ClassInfo{simplereport}{Remember to add a bibliography with addbibresource}
 }
+\fi
 \fi
 
 \endinput
