@@ -36,6 +36,18 @@
 \DeclareOption{inf2201}{%
 	\course[INF-2201]{Operating System Fundamentals}
 }
+\DeclareOption{inf2700}{%
+	\course[INF-2700]{Database Systems}
+}
+\DeclareOption{inf2202}{%
+	\course[INF-2202]{Concurrency and Data-Intensive Programming}
+}
+\DeclareOption{inf2300}{%
+	\course[INF-2300]{Computer Communication}
+}
+\DeclareOption{mat1003}{%
+	\course[MAT-1003]{Calculus 3}
+}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
