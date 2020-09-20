@@ -33,9 +33,9 @@ biber file
 pdflatex file.tex
 ```
 
-### `defaultpackages`
+### `defpkg`
 
-The option `defaultpackages` makes the class include a handful of default packages, including `mathtools` etc.
+The option `defpkg` makes the class include a handful of default packages, including `mathtools` etc.
 
 ### Course
 

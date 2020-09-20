@@ -16,7 +16,7 @@
 \newcommand{\candidate}[1]{\def\@candidate{#1}}
 
 \newif\if@defaultpackages\@defaultpackagesfalse
-\DeclareOption{defaultpackages}{\@defaultpackagestrue}
+\DeclareOption{defpkg}{\@defaultpackagestrue}
 \newif\if@defaultbibliography\@defaultbibliographyfalse
 \DeclareOption{bib}{\@defaultbibliographytrue}
 \newif\if@noprintbib\@noprintbibtrue
