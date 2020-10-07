@@ -5,15 +5,9 @@ The class name is `simplereport`.
 
 ## Installation
 
-Run the following commands:
-
-```bash
-git clone https://github.com/teo8192/simplereport.git
-cd simplereport
-texhash
-```
-
-Then you can use the class from wherever.
+You need to have the `simplereport.cls` file in the directory where you use the class.
+It is possible to install it permanently on your system, where you may use it from any directory, see [LaTeX/Installing Extra Packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages).
+Summary; find/create a `texmf` or `texmf/local` directory, and place it under `tex/latex/base`.
 
 ## Class Options
 
