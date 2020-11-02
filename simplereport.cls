@@ -80,7 +80,7 @@
 
 \allsectionsfont{\sffamily\mdseries\upshape}
 
-\setlength{\topmargin}{-3mm}
+\setlength{\topmargin}{-1cm}
 \setlength{\oddsidemargin}{0mm}
 \setlength{\textwidth}{15.7cm}
 \setlength{\textheight}{22.0cm}
@@ -91,25 +91,27 @@
 
 \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 
-\renewcommand{\headrulewidth}{1pt} % customise the layout...
+% \renewcommand{\headrulewidth}{1pt} % customise the layout...
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
 \renewcommand{\footrulewidth}{0pt}
-\lhead{\fancyplain{}{
-\ifx\@courseCode\@empty
-\relax
-\else
-\@courseCode:
-\fi
-\@title}}\chead{}\rhead{\fancyplain{}{
-\ifx\@candidate\@empty
-\ifx\@author\@empty
-\relax
-\else
-\@author{}
-\fi
-\else
-Candidate No. \@candidate
-\fi
-}}
+\lhead{}\chead{}\rhead{}
+% \lhead{\fancyplain{}{
+% \ifx\@courseCode\@empty
+% \relax
+% \else
+% \@courseCode:
+% \fi
+% \@title}}\chead{}\rhead{\fancyplain{}{
+% \ifx\@candidate\@empty
+% \ifx\@author\@empty
+% \relax
+% \else
+% \@author{}
+% \fi
+% \else
+% Candidate No. \@candidate
+% \fi
+% }}
 \lfoot{}\cfoot{Page {\thepage} of~\pageref{LastPage}}\rfoot{}
 
 \renewcommand{\maketitle}{%
@@ -129,7 +131,7 @@ Candidate No. \@candidate
 	\ifx\@title\@empty
 	\ClassError{simplereport}{Trying to maketitle without title}{What is wrong with you?}
 	\else
-	\textsc{\LARGE \@title}\\[1.0cm]
+	\textsf{\LARGE \@title}\\[1.0cm]
 	\fi
 
 	\ifx\@candidate\@empty
