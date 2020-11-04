@@ -119,7 +119,7 @@
 		\ifx\@course\@empty
 		\relax
 		\else
-	\textsc{\Large
+	\textsc{\large
 		\ifx\@courseCode\@empty
 		\relax
 		\else
@@ -131,7 +131,7 @@
 	\ifx\@title\@empty
 	\ClassError{simplereport}{Trying to maketitle without title}{What is wrong with you?}
 	\else
-	\textsf{\LARGE \@title}\\[1.0cm]
+	\textsf{\huge \@title}\\[1.0cm]
 	\fi
 
 	\ifx\@candidate\@empty
