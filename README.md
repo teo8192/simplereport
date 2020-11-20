@@ -41,3 +41,16 @@ If you do not want to use the included ones, use the following LaTeX code in you
 The course code is an optional argument, if you do not want to use it, skip it.
 
 Some from UiT have been added, e.g. if you want a report for INF-2200, use the option `inf2200`.
+
+### INF-2700
+
+Some relational algebra macros is added.
+They need to be used in math environments.
+
+ * select: \sel{attribute=2 \vee attribute1 \geq 3}{Relation}
+ * project: \proj{attribute,attribute}{Relation}
+ * rename: \rename{newname}{oldname}{relation}
+ * join: \join{R}{S}
+ * and: \wedge
+ * or: \vee
+ * not: \neg

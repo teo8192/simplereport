@@ -38,6 +38,10 @@
 }
 \DeclareOption{inf2700}{%
 	\course[INF-2700]{Database Systems}
+	\newcommand{\proj}[2]{\Pi{}_{#1}(#2)}
+	\newcommand{\sel}[2]{\sigma{}_{#1}(#2)}
+	\newcommand{\rename}[3]{\rho{}_{#1/#2}(#3)}
+	\newcommand{\join}[2]{#1 \bowtie{} #2}
 }
 \DeclareOption{inf2202}{%
 	\course[INF-2202]{Concurrency and Data-Intensive Programming}
