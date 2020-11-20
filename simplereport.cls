@@ -58,6 +58,7 @@
 		%and choose between inf1100, inf1101, inf1400 and inf2200}}
 
 \pagenumbering{arabic}
+\RequirePackage[margin=2.54cm,top=2.54cm]{geometry}
 
 \RequirePackage{sectsty} % This is to get section and title style
 \RequirePackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -79,11 +80,6 @@
 \fi
 
 \allsectionsfont{\sffamily\mdseries\upshape}
-
-\setlength{\topmargin}{-1cm}
-\setlength{\oddsidemargin}{0mm}
-\setlength{\textwidth}{15.7cm}
-\setlength{\textheight}{22.0cm}
 
 \pagestyle{fancyplain}
 
