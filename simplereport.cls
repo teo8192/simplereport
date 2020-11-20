@@ -140,6 +140,8 @@
 	\else
 	\LARGE{\@author} \\[0.5cm]
 	\fi
+	\else
+	\Large{Candidate \@candidate} \\[0.5cm]
 	\fi
 
 	{\large \today}
