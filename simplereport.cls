@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{simplereport}[2019/11/07 LaTeX class for simple reports]
 
-\LoadClass[a4paper]{article}
+\LoadClass[a4paper,11pt]{article}
 \def\@course{}
 \def\@courseCode{}
 \def\@candidate{}
@@ -62,7 +62,7 @@
 		%and choose between inf1100, inf1101, inf1400 and inf2200}}
 
 \pagenumbering{arabic}
-\RequirePackage[margin=2.54cm,top=2.54cm]{geometry}
+\RequirePackage[margin=2cm,top=2.54cm]{geometry}
 
 \RequirePackage{sectsty} % This is to get section and title style
 \RequirePackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -89,7 +89,7 @@
 
 \RequirePackage{lastpage} % to get the correct numbering of the last page
 
-\renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
+% \renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
 
 % \renewcommand{\headrulewidth}{1pt} % customise the layout...
 \renewcommand{\headrulewidth}{0pt} % customise the layout...
