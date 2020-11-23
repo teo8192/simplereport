@@ -78,7 +78,7 @@
 \RequirePackage{array} % for better arrays (eg matrices) in maths
 \RequirePackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
 \RequirePackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
-\RequirePackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% \RequirePackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 
 \newcommand\defeq{\stackrel{\mathclap{\normalfont\tiny\mbox{def}}}{=}}
 \fi
