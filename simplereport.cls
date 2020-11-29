@@ -42,6 +42,7 @@
 	\newcommand{\sel}[2]{\sigma{}_{#1}(#2)}
 	\newcommand{\rename}[3]{\rho{}_{#1/#2}(#3)}
 	\newcommand{\join}[2]{#1 \bowtie{} #2}
+	\def\bpt{B$^+$ tree}
 }
 \DeclareOption{inf2202}{%
 	\course[INF-2202]{Concurrency and Data-Intensive Programming}
