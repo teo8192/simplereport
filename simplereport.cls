@@ -55,6 +55,15 @@
 \DeclareOption{mat1003}{%
 	\course[MAT-1003]{Calculus 3}
 }
+\DeclareOption{mat2300}{%
+	\course[MAT-2300]{Algebra 1}
+}
+\DeclareOption{inf2310}{%
+	\course[INF-2310]{Computer Security}
+}
+\DeclareOption{inf2900}{%
+	\course[INF-2900]{Software Engineering}
+}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
 
