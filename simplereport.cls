@@ -95,10 +95,16 @@
 \RequirePackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
 % \RequirePackage{subfig} % make it possible to include more than one captioned figure/table in a single float
 
+\fi
+
 \if@math
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
 
 \newcommand{\divergence}{\text{div}\,}
 \newcommand{\curl}{\text{curl}\,}
@@ -108,7 +114,6 @@
 \newcommand{\pt}[2]{\frac{\d{} {#1}}{\d{} {#2}}}
 
 \newcommand\defeq{\stackrel{\mathclap{\normalfont\tiny\mbox{def}}}{=}}
-\fi
 \fi
 
 \allsectionsfont{\sffamily\mdseries\upshape}
