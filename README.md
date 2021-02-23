@@ -9,6 +9,12 @@ You need to have the `simplereport.cls` file in the directory where you use the 
 It is possible to install it permanently on your system, where you may use it from any directory, see [LaTeX/Installing Extra Packages](https://en.wikibooks.org/wiki/LaTeX/Installing_Extra_Packages).
 Summary; find/create a `texmf` or `texmf/local` directory, and place `simplereport.cls` under `tex/latex/base`.
 
+It is possible to use the install script.
+
+```sh
+sh ./install.sh
+```
+
 ## Class Options
 
 ### `bib`
