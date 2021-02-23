@@ -1,13 +1,11 @@
-\documentclass[defaultpackages,inf2200]{simplereport}
+\documentclass[bib,defpkg,inf2200,math]{simplereport}
 
 \usepackage{lipsum}
 
-%\course[INF-1100]{Introduction to programming}
-
-\author{Teodor Dahl Knutsen}
+\author{Name Nameson}
 \title{Assignment 1}
 
-%\addbibresource{/home/teo/extra/uit/bib/ref.bib}
+\addbibresource{example_bibliography.bib}
 
 \begin{document}
 
@@ -15,11 +13,18 @@
 
 \section{Introduction}
 
-\lipsum[1-1]
+\lipsum[1]\cite[p.~213]{pathen98}
 
 \section{Technical Background}
 
-\lipsum[2-3]%\cite{pathen98}
+\lipsum[2]
+
+\begin{align*}
+	f: \R\times\R &\to \C \\
+	(a,b) &\mapsto a + bi
+\end{align*}
+
+\lipsum[3]
 
 \section{Design}
 
